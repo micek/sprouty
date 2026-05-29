@@ -1,3 +1,8 @@
+/**
+ * Floating "hold K to talk" hint pill — desktop-only affordance pinned to the
+ * bottom-right that surfaces the keyboard shortcut for the voice modal. Hidden
+ * on small screens (which use tap / long-press instead).
+ */
 export function FloatingKbd() {
   return (
     <div

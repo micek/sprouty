@@ -13,6 +13,13 @@ import { TopBar } from "@/components/top-bar";
 import { VoiceCard } from "@/components/voice-card";
 import { VoiceSessionController } from "@/components/voice-session-controller";
 
+/**
+ * The single Sprouty page. Composes the whole experience top to bottom: sticky
+ * TopBar, the voice hero (VoiceCard + PlanCard), Knowledge / Plan / Vision
+ * sections, and the footer. The headless controllers (KeyboardListener,
+ * VoiceSessionController) and overlays (ListeningModal, ToastHost) mount here
+ * once so voice + keyboard work from anywhere on the page.
+ */
 export default function HomePage() {
   return (
     <>

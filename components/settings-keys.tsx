@@ -83,6 +83,14 @@ const KEYS: KeyDef[] = [
   },
 ];
 
+/**
+ * Settings panel for BYOK API keys (OpenRouter, Qdrant, LiveKit, optional
+ * trigger.dev / OpenAI). Keys are written encrypted to IndexedDB via
+ * `saveKey()` and never leave the browser. Each row has a "Test" button that
+ * verifies the key against its provider and stamps the result (green if
+ * verified <24h, gray if unset, red if it failed). Also hosts the ZIP
+ * export/import controls for moving data between devices.
+ */
 export function SettingsKeys() {
   const required = KEYS.filter((k) => k.required);
   const optional = KEYS.filter((k) => !k.required);

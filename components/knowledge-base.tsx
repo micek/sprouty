@@ -28,6 +28,14 @@ const ACCEPTED: Record<string, string[]> = {
   "image/*": [".png", ".jpg", ".jpeg", ".webp", ".gif", ".heic"],
 };
 
+/**
+ * Knowledge base panel — the drop zone that turns gardening PDFs/docs into
+ * Qdrant vectors. Files dragged here flow through `ingestKnowledgeFile()`
+ * (extract → chunk → embed via OpenRouter → upsert to the `sprout_kb`
+ * collection) and surface a live status (queued / ingesting / ready / failed)
+ * with page + vector counts. Everything reads reactively from IndexedDB so the
+ * list stays in sync across tabs and refreshes.
+ */
 export function KnowledgeBase() {
   // Reactive read from IndexedDB. `useLiveQuery` automatically re-renders the
   // UI when records change — drops, status updates, removals, all flow back

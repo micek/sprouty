@@ -229,9 +229,24 @@ README.md               this file
 
 **Hosted services:** OpenRouter, Qdrant Cloud, LiveKit Cloud, trigger.dev, Vercel.
 
-**Source content (in `knowledge/`):**
-- *Green-Thumb Beginnings: A Foolproof Guide to Starting Your First Vegetable Garden*
-- *The Modern Victory Garden: A Homesteader's Guide to Abundant Harvests*
+**Source content (in `knowledge/`):** Two free, open-source eBooks published by [BrightLearn AI](https://brightlearn.ai/). These are the gardening books ingested into Qdrant as Sprouty's knowledge base — full credit to their authors:
+
+- ***Green-Thumb Beginnings: A Foolproof Guide to Starting Your First Vegetable Garden*** by **Thomas L. McAmis** — [free download](https://books.brightlearn.ai/Green-Thumb-Beginnings-A-Foolproof-Guide-to-Starting-2daf96141-en/index.html)
+- ***The Modern Victory Garden: A Homesteader's Guide to Abundant Harvests*** by **Chief Bollinger, USN Meteorologist (Ret.)** — [free download](https://books.brightlearn.ai/The-Modern-Victory-Garden-A-Homesteaders-Guide-to-06732d7d8-En/index.html)
+
+### Attribution & open-source licenses
+
+Every dependency above is used unmodified via its public package registry (npm / PyPI) and remains under its own license — predominantly **MIT** and **Apache-2.0**, with a few BSD/ISC. No third-party source was copied into this repo; all of it is pulled at install time, so each package's `LICENSE` ships in `node_modules/<pkg>` or the Python `.venv` and is not relisted here. Sprouty's own code is MIT (see [LICENSE](LICENSE)).
+
+Specific acknowledgements:
+- **Qdrant** — vector database + Discovery/Recommendation APIs (`@qdrant/js-client-rest`, `qdrant-client`), Apache-2.0
+- **LiveKit** — WebRTC + Agents framework (`livekit-client`, `livekit-server-sdk`, `livekit-agents`, plugins), Apache-2.0
+- **Mistral** — Voxtral STT + Mistral Small LLM, accessed as a service (no bundled code)
+- **OpenRouter** — unified AI gateway, accessed as a service
+- **OpenAI / Google** — `tts-1` and Gemini image generation, accessed as services
+- **Vercel** (Next.js) and **Tailwind Labs** (Tailwind CSS), MIT
+
+The two gardening books in `knowledge/` are **free, open-source eBooks** from [BrightLearn AI](https://brightlearn.ai/), used to demonstrate the ingest → retrieval pipeline. Credit to their authors — Thomas L. McAmis (*Green-Thumb Beginnings*) and Chief Bollinger, USN Meteorologist Ret. (*The Modern Victory Garden*); see the **Source content** list above for free download links.
 
 ---
 

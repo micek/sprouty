@@ -9,6 +9,11 @@ interface SectionProps {
   className?: string;
 }
 
+/**
+ * Shared section shell — the eyebrow label + headline + optional right-slot
+ * header used by the Knowledge, Plan, and Vision blocks so they share one
+ * consistent layout. `id` is the scroll anchor the TopBar tabs target.
+ */
 export function Section({ eyebrow, title, right, children, id, className }: SectionProps) {
   return (
     <section

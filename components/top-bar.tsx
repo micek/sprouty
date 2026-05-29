@@ -53,6 +53,13 @@ function scrollToId(id: string) {
     ?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+/**
+ * Sticky top navigation — brand mark, the four section tabs (My Garden /
+ * Knowledge / Plan / Vision), and the Settings button. Clicking a tab smooth-
+ * scrolls to the matching on-page section; a scrollspy keeps the active tab in
+ * sync as the user scrolls, suspended briefly after a click so the two don't
+ * fight.
+ */
 export function TopBar() {
   const [active, setActive] = useState<Tab>("My Garden");
   // Click-initiated navigation suspends the scrollspy until this timestamp so

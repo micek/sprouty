@@ -39,6 +39,15 @@ interface AfterState {
   engine: VisionEngine;
 }
 
+/**
+ * Garden vision board — the "before → after" image generator. The user drops a
+ * photo of their current space (or skips straight to generation), picks an
+ * engine (Gemini Nano Banana 2 by default, GPT-Image as the alt), and Sprouty
+ * renders an AI vision of the finished garden via `generateVision()`. Results
+ * persist to IndexedDB (`db().visions`) and the latest is reloaded on mount so
+ * the board survives refreshes. Image gen routes through OpenRouter per the
+ * BYOK rule — the key never leaves the browser.
+ */
 export function PhotoVision() {
   const [engine, setEngine] = useState<VisionEngine>("gemini");
   const [before, setBefore] = useState<BeforeState | null>(null);

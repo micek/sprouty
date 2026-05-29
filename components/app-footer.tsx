@@ -5,6 +5,12 @@ import { RotateCcw } from "lucide-react";
 import { resetEverything } from "@/lib/reset";
 import { toast } from "@/lib/toast";
 
+/**
+ * Page footer with the "Start over" control — wipes all local data (IndexedDB,
+ * device id, and best-effort Qdrant vectors) via `resetEverything()` behind a
+ * confirm dialog, then reloads. The escape hatch for the no-accounts, BYOK
+ * model where the only way to "log out" is to clear the browser.
+ */
 export function AppFooter() {
   const [busy, setBusy] = useState(false);
 

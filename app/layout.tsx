@@ -53,6 +53,11 @@ export const viewport: Viewport = {
   themeColor: "#f8f6f0",
 };
 
+/**
+ * Root layout — loads the fonts (Inter Tight, Fraunces, Inter, IBM Plex Mono),
+ * sets the global metadata/viewport, and wraps every page in the <html>/<body>
+ * shell. The only layout in the app; Sprouty is a single-page experience.
+ */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html

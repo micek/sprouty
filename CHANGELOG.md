@@ -11,6 +11,16 @@ Format:
 
 ---
 
+## 2026-05-29, 3:45pm CST — Documentation pass, eBook + license attribution, repo made public
+- **Repo visibility:** initialized local git, pushed the full project to `github.com/micek/sprouty`, and flipped the repo from **private → public** today so judges can clone it for review.
+- Added module/JSDoc headers to the exported components and lib files that were missing them: `store.ts`, `photo-vision.tsx`, `knowledge-base.tsx`, `settings-keys.tsx`, `top-bar.tsx`, `section.tsx`, `app-footer.tsx`, `floating-kbd.tsx`, plus `app/layout.tsx` and `app/page.tsx`.
+- Added an **Attribution & open-source licenses** section to the README (Qdrant, LiveKit, Mistral, OpenRouter, OpenAI/Google, Vercel/Tailwind; all deps used unmodified under MIT/Apache-2.0).
+- Credited the knowledge-base eBooks: *Green-Thumb Beginnings* by Thomas L. McAmis and *The Modern Victory Garden* by Chief Bollinger (USN, Ret.) — both free/open-source from BrightLearn AI, with download links.
+- No behavior change — comments + docs only. `npm run typecheck` clean.
+- Verified against the Qdrant "Think Outside the Bot" rules: Qdrant required ✓, no chatbot UI ✓, README present ✓, basic comments ✓, attribution ✓, all code written in-period ✓. Demo video still in progress.
+
+---
+
 ## 2026-05-14, 5:19pm CST — Start-over reset, plan-info gating, LiveKit dispatch fixes, scrollspy + toast move, plan empty state
 
 A continuation of the multi-session voice-flow work, plus a privacy/UX commitment that the user can wipe everything from inside the app.
