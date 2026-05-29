@@ -1,5 +1,7 @@
 # Sprouty 🌱
 
+![Sprouty — voice-first garden coach](public/Sprouty%20-%20Readme.png)
+
 **Voice-first garden coach for first-time growers.** Drop in a gardening PDF, talk to Sprouty for 90 seconds about your space, and get a personalized 12-week plan with weekly tasks, a shopping list, and an AI-generated vision of your future garden.
 
 > _"From 'I have no idea where to start' to a 12-week vegetable garden plan in 90 seconds of voice."_

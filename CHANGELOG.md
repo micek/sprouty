@@ -11,6 +11,12 @@ Format:
 
 ---
 
+## 2026-05-29, 4:00pm CST — README screenshot + webapp screenshot added
+- Added `public/Sprouty - Readme.png` — hero screenshot displayed at the top of the README on GitHub.
+- Added `public/Sprouty - Qdrant Hackathon 2026.png` — full webapp screenshot for demo/submission use.
+
+---
+
 ## 2026-05-29, 3:45pm CST — Documentation pass, eBook + license attribution, repo made public
 - **Repo visibility:** initialized local git, pushed the full project to `github.com/micek/sprouty`, and flipped the repo from **private → public** today so judges can clone it for review.
 - Added module/JSDoc headers to the exported components and lib files that were missing them: `store.ts`, `photo-vision.tsx`, `knowledge-base.tsx`, `settings-keys.tsx`, `top-bar.tsx`, `section.tsx`, `app-footer.tsx`, `floating-kbd.tsx`, plus `app/layout.tsx` and `app/page.tsx`.
