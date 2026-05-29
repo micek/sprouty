@@ -1,0 +1,90 @@
+# ─── Secrets — NEVER commit any of these ───
+# Anything matching .env* is ignored EXCEPT the *.example templates.
+.env
+.env.*
+!.env.example
+!.env.*.example
+agent/.env
+agent/.env.*
+!agent/.env.example
+!agent/.env.*.example
+
+# Common credential files we should never see in this repo
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+id_rsa*
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+gcp-key*.json
+firebase-adminsdk-*.json
+secrets.yaml
+secrets.yml
+
+# ─── Node / Next.js ───
+node_modules/
+.next/
+out/
+dist/
+build/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# ─── Python (agent + ingest) ───
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# ─── Build / package outputs ───
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# ─── IDE / OS ───
+.DS_Store
+Thumbs.db
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+
+# ─── Local dev artifacts ───
+.cache/
+.coverage
+coverage/
+.env.local
+*.local
+
+# ─── User content / generated artifacts ───
+# (Don't commit user-uploaded photos, exported ZIPs, etc.)
+uploads/
+exports/
+tmp/
+
+# ─── Local-only design references / scratch ───
+# The original design HTMLs and the strategic brief live here so they don't
+# leak to GitHub or get bundled into the Vercel build. Mirror this entry in
+# .vercelignore so the platform-side upload also skips it.
+.local/
+
+# ─── Claude Code / tooling ───
+.claude/settings.local.json
+.playwright-mcp/
+
+# ─── Non-garden knowledge content ───
+knowledge/dan-henry/

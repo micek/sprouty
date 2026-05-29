@@ -1,0 +1,25 @@
+# Files / folders excluded from the Vercel deployment upload.
+# This is independent of .gitignore — Vercel only reads .vercelignore (or
+# falls back to .gitignore) when deciding what to upload to its build server.
+# https://vercel.com/docs/cli/deploying-from-cli#vercelignore
+
+# Design references that aren't part of the app code
+.local/
+
+# Python services run elsewhere (Railway / LiveKit Cloud Agent Workers),
+# not inside the Next.js Vercel deployment
+agent/
+ingest/
+.venv/
+
+# Source PDFs are user-uploaded into Qdrant at runtime via the ingest pipeline,
+# they don't need to ship with the static deploy
+knowledge/
+
+# Repo-only docs that don't belong in the production bundle
+CHANGELOG.md
+TODO.md
+SKILLS/
+.githooks/
+scripts/
+sprout_prd.md

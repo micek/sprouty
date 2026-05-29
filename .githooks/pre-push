@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Sprout — pre-push hook
+# Final safety net: scan the whole working tree before anything reaches GitHub.
+# Bypass with `git push --no-verify` only if you are absolutely sure.
+
+set -e
+
+repo_root="$(git rev-parse --show-toplevel)"
+"$repo_root/scripts/check-secrets.sh"

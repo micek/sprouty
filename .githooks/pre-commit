@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Sprout — pre-commit hook
+# Scans staged content for likely API keys / credentials and aborts the
+# commit if any are found. Bypass with `git commit --no-verify` only if
+# you are absolutely sure (you usually shouldn't).
+
+set -e
+
+repo_root="$(git rev-parse --show-toplevel)"
+"$repo_root/scripts/check-secrets.sh" --staged

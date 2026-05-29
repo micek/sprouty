@@ -1,0 +1,270 @@
+@import "tailwindcss";
+
+/* ─── Design tokens ─── */
+@theme {
+  /* Paper / surface */
+  --color-paper: #f8f6f0;
+  --color-paper-cream: #fcfaf5;
+  --color-paper-warm: #f0ede0;
+  --color-card: #ffffff;
+  --color-card-elev: #ffffff;
+
+  /* Ink */
+  --color-ink: #1a2418;
+  --color-ink-soft: #2d3d2a;
+  --color-ink-muted: #5d6b4f;
+  --color-ink-faded: #8d9b7d;
+
+  /* Rules / dividers */
+  --color-rule: #e8e4d6;
+  --color-rule-soft: #efebe0;
+
+  /* Brand greens */
+  --color-forest: #2d3d2a;
+  --color-forest-deep: #1a3d2e;
+  --color-sage: #5a8a3a;
+  --color-sage-deep: #3a6240;
+
+  /* Lime (action / accent) */
+  --color-lime: #c4dd58;
+  --color-lime-bright: #d4eb6a;
+  --color-lime-deep: #8fb340;
+
+  /* Terracotta (pot) */
+  --color-terracotta: #c4825a;
+  --color-terracotta-deep: #a55a40;
+  --color-terracotta-soft: #d99878;
+
+  /* Blue accent (water can) */
+  --color-water-blue: #6db4d4;
+  --color-water-blue-light: #a8d3e8;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(45, 61, 42, 0.05), 0 2px 4px rgba(45, 61, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(45, 61, 42, 0.06), 0 12px 32px rgba(45, 61, 42, 0.06);
+  --shadow-lg: 0 12px 32px rgba(45, 61, 42, 0.08), 0 24px 64px rgba(45, 61, 42, 0.10);
+
+  /* Type families (loaded via next/font in layout.tsx) */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-tight: var(--font-inter-tight), system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-mono: var(--font-plex-mono), "Menlo", monospace;
+}
+
+/* ─── Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-soft);
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+input {
+  font-family: inherit;
+  outline: none;
+}
+
+/* ─── Reusable utility classes that map design system primitives ─── */
+.font-tight {
+  font-family: var(--font-tight);
+  letter-spacing: -0.03em;
+}
+.font-serif-italic {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 72, "SOFT" 100;
+}
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Keyboard cap */
+.kbd-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 6px;
+  background: linear-gradient(180deg, #ffffff, #f0ede0);
+  border: 1px solid #d8d3bc;
+  border-bottom: 2px solid #c4bfa5;
+  border-radius: 5px;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 11px;
+  color: var(--color-forest);
+  line-height: 1;
+}
+
+/* ─── Sprout character animations (idle) ─── */
+@keyframes glow-breathe {
+  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(0.95); }
+  50%      { opacity: 1;   transform: translateX(-50%) scale(1.05); }
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(196, 221, 88, 0.3); }
+  50%      { box-shadow: 0 0 0 8px rgba(196, 221, 88, 0.1); }
+}
+@keyframes leaf-sway-left {
+  0%, 100% { transform: rotate(-30deg); }
+  50%      { transform: rotate(-34deg); }
+}
+@keyframes leaf-sway-right {
+  0%, 100% { transform: rotate(150deg) scaleX(-1); }
+  50%      { transform: rotate(146deg) scaleX(-1); }
+}
+@keyframes breathe {
+  0%, 100% { transform: translateX(-50%) translateY(0)    scale(1);     }
+  50%      { transform: translateX(-50%) translateY(-4px) scale(1.025); }
+}
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(1);   }
+  95%           { transform: scaleY(0.1); }
+}
+@keyframes pulse-tiny {
+  0%, 100% { opacity: 1;   }
+  50%      { opacity: 0.4; }
+}
+@keyframes floating-rise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* ─── Sprout listening (active) animations ─── */
+@keyframes breathe-fast {
+  0%, 100% { transform: translateX(-50%) translateY(0)    scale(1);    }
+  50%      { transform: translateX(-50%) translateY(-8px) scale(1.06); }
+}
+@keyframes leaf-sway-left-fast {
+  0%, 100% { transform: rotate(-30deg); }
+  50%      { transform: rotate(-40deg); }
+}
+@keyframes leaf-sway-right-fast {
+  0%, 100% { transform: rotate(150deg) scaleX(-1); }
+  50%      { transform: rotate(140deg) scaleX(-1); }
+}
+@keyframes blink-fast {
+  0%, 80%, 100% { transform: scaleY(1);   }
+  85%, 95%      { transform: scaleY(0.4); }
+}
+@keyframes water-tilt {
+  0%, 100% { transform: translateX(0)    translateY(0)   rotate(35deg); }
+  50%      { transform: translateX(-4px) translateY(2px) rotate(45deg); }
+}
+@keyframes water-fall {
+  0%   { top: 0;    opacity: 0; transform: scale(0.6); }
+  20%  {            opacity: 1; transform: scale(1);   }
+  80%  {            opacity: 1; transform: scale(0.9); }
+  100% { top: 80px; opacity: 0; transform: scale(0.4); }
+}
+@keyframes water-shimmer {
+  0%, 100% { opacity: 0.4; transform: scaleX(0.8); }
+  50%      { opacity: 0.7; transform: scaleX(1);   }
+}
+@keyframes wave-bounce {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.5; }
+  50%      { transform: scaleY(1);   opacity: 1;   }
+}
+@keyframes glow-listening {
+  0%, 100% { opacity: 0.8; transform: translateX(-50%) scale(1);    }
+  50%      { opacity: 1;   transform: translateX(-50%) scale(1.15); }
+}
+@keyframes pulse-dot-fast {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(196, 221, 88, 0.4); transform: scale(1);   }
+  50%      { box-shadow: 0 0 0 10px rgba(196, 221, 88, 0);  transform: scale(1.2); }
+}
+@keyframes cursor-blink {
+  0%, 50%   { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+@keyframes modal-rise {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+/* While the K-hold modal is open, blur the page behind it */
+body.modal-open .behind-modal {
+  filter: blur(8px) saturate(0.7);
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
+/* Scroll target offset so the sticky topbar doesn't cover anchored sections */
+.scroll-anchor {
+  scroll-margin-top: 96px;
+}
+
+/* Powered-by marquee. The track renders the brand row twice; animating from
+   translateX(-50%) → translateX(0) slides the second copy into the first
+   copy's starting position so the loop reads as continuous left-to-right
+   motion without a visible jump. */
+@keyframes powered-by-scroll {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0);    }
+}
+@media (prefers-reduced-motion: reduce) {
+  .powered-by-track { animation: none !important; }
+}
+
+/* Shimmer placeholder — a moving lime sheen used while the app is waiting on
+   long-running AI work (image generation, plan generation, large ingest).
+   Base layer is a dim card-tone so the shimmer reads as a faint hint of
+   motion rather than a hard pulse. Reduced motion drops the sweep but keeps
+   the static gradient so the placeholder is still visually distinguishable. */
+@keyframes shimmer-sweep {
+  from { background-position: -200% 0; }
+  to   { background-position:  200% 0; }
+}
+.shimmer {
+  background-color: var(--color-paper-warm);
+  background-image: linear-gradient(
+    100deg,
+    rgba(196, 221, 88, 0)    30%,
+    rgba(196, 221, 88, 0.45) 50%,
+    rgba(196, 221, 88, 0)    70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer-sweep 1.8s ease-in-out infinite;
+}
+.shimmer-dark {
+  background-color: rgba(45, 61, 42, 0.55);
+  background-image: linear-gradient(
+    100deg,
+    rgba(196, 221, 88, 0)    30%,
+    rgba(196, 221, 88, 0.30) 50%,
+    rgba(196, 221, 88, 0)    70%
+  );
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  animation: shimmer-sweep 2.2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .shimmer, .shimmer-dark { animation: none; }
+}
+
+/* Scrollbars (subtle, on-brand) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-rule);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-faded); }
