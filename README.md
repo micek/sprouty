@@ -297,6 +297,12 @@ All participants are 18+; code in this repo was written during the hackathon per
 
 ---
 
+## App screenshot
+
+![Sprouty — full webapp](public/Sprouty%20-%20Qdrant%20Hackathon%202026.png)
+
+---
+
 ## For judges and reviewers
 
 If you just want to clone the repo and try Sprouty locally, the fastest path is in [CONTRIBUTING.md → Run it in 60 seconds](CONTRIBUTING.md#run-it-in-60-seconds). That walks you through the keys you need, how to ingest the bundled gardening PDFs, and two ways to drive the planning pipeline (typed-transcript modal for the no-microphone path, or the full LiveKit voice flow with the Python agent in a second terminal).
