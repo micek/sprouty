@@ -12,7 +12,6 @@ Built for the **Qdrant "Think Outside the Bot" Hackathon — Vector Space Day 20
 
 - **Submission deadline:** June 1, 2026 · 11:59 PM Pacific
 - **Demo video:** https://youtu.be/DPgmu28xSec
-- **Live demo (Vercel):** _link to be added_
 
 ---
 
