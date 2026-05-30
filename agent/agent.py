@@ -445,6 +445,11 @@ async def entrypoint(ctx: JobContext) -> None:
 
     @session.on("user_input_transcribed")
     def _on_user_transcribed(ev) -> None:
+        # DIAGNOSTIC: log every STT event (interim + final, including empty)
+        # so we can tell apart "VAD/STT never fired" (no logs at all → browser
+        # sending silence) vs "STT fired but returned empty text" (silent/
+        # echo-cancelled audio reaching Voxtral). Remove once hearing is fixed.
+        log.info("STT event: is_final=%s text=%r", ev.is_final, ev.transcript)
         # `user_input_transcribed` fires for both interim and final results.
         # Only commit the final transcript to avoid duplicate fragments.
         if not ev.is_final:
@@ -456,6 +461,14 @@ async def entrypoint(ctx: JobContext) -> None:
         asyncio.create_task(
             _publish_event(ctx.room, {"type": "user_transcript", "text": text})
         )
+
+    # DIAGNOSTIC: surface raw VAD speech boundaries. If these never appear
+    # during a live test where you're clearly talking, the audio reaching the
+    # agent is silent (browser mic problem) — not an STT problem. Remove once
+    # hearing is fixed.
+    @session.on("user_state_changed")
+    def _on_user_state(ev) -> None:
+        log.info("user_state_changed: %s -> %s", getattr(ev, "old_state", "?"), getattr(ev, "new_state", "?"))
 
     @session.on("conversation_item_added")
     def _on_item_added(ev) -> None:
