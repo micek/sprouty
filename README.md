@@ -1,5 +1,7 @@
 # Sprouty 🌱
 
+[![Sprouty — Demo Video](public/Sprouty%20-%20YouTube%20Thumbnail.png)](https://youtu.be/DPgmu28xSec)
+
 ![Sprouty — voice-first garden coach](public/Sprouty%20-%20Readme.png)
 
 **Voice-first garden coach for first-time growers.** Drop in a gardening PDF, talk to Sprouty for 90 seconds about your space, and get a personalized 12-week plan with weekly tasks, a shopping list, and an AI-generated vision of your future garden.
@@ -9,7 +11,7 @@
 Built for the **Qdrant "Think Outside the Bot" Hackathon — Vector Space Day 2026**.
 
 - **Submission deadline:** June 1, 2026 · 11:59 PM Pacific
-- **Demo video:** _link to be added_
+- **Demo video:** https://youtu.be/DPgmu28xSec
 - **Live demo (Vercel):** _link to be added_
 
 ---
@@ -272,7 +274,7 @@ The two gardening books in `knowledge/` are **free, open-source eBooks** from [B
 | Deadline | June 1, 2026 · 11:59 PM Pacific (UTC-7) |
 | Winners announced | June 11, 2026 (Vector Space Day SF) |
 | Repo shared with | @kanungle |
-| Demo video | ≤3 min, hosted on YouTube/Loom (link _TBA_) |
+| Demo video | https://youtu.be/DPgmu28xSec |
 | Team | _TBA_ |
 
 ### Judging criteria addressed

@@ -11,6 +11,12 @@ Format:
 
 ---
 
+## 2026-05-29, 5:30pm CST — YouTube demo video + thumbnail added to README
+- Added YouTube thumbnail (`public/Sprouty - YouTube Thumbnail.png`) at the top of the README as a clickable link to the demo video.
+- Updated demo video placeholder links to `https://youtu.be/DPgmu28xSec` (hero bullet list + submission details table).
+
+---
+
 ## 2026-05-29, 4:00pm CST — README screenshot + webapp screenshot added
 - Added `public/Sprouty - Readme.png` — hero screenshot displayed at the top of the README on GitHub.
 - Added `public/Sprouty - Qdrant Hackathon 2026.png` — full webapp screenshot for demo/submission use.
